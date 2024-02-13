@@ -32,16 +32,16 @@ void forward(int dist){
   digitalWrite(AIN, HIGH);    // Forward direction on Right
   digitalWrite(BIN, HIGH);    // Forward direction on Left
   if (dist == 25){
-    analogWrite(PWMA, 140);   // Full power on Right
-    analogWrite(PWMB, 140);
+    analogWrite(PWMA, 140);   //  power on Right
+    analogWrite(PWMB, 140);   // power on left
     delay(700);   
     stopTime(700);
     digitalWrite(PWMA, LOW);   // No power on Right
     digitalWrite(PWMB, LOW);   // No power on Left
     delay(2000);
   } else if (dist == 50){
-    analogWrite(PWMA, 140);   // Full power on Right
-    analogWrite(PWMB, 140);
+    analogWrite(PWMA, 140);   //  power on Right
+    analogWrite(PWMB, 140);   // power on left
     delay(910);   
     stopTime(910);
     digitalWrite(PWMA, LOW);   // No power on Right
@@ -54,16 +54,16 @@ void backward(int dist){
   digitalWrite(AIN, LOW);    // backward direction on Right
   digitalWrite(BIN, LOW);    // backward direction on Left
   if (dist == 25){
-    analogWrite(PWMA, 140);   // Full power on Right
-    analogWrite(PWMB, 140);
+    analogWrite(PWMA, 140);   // power on Right
+    analogWrite(PWMB, 140);   // power on left
     delay(700);   
     stopTime(700);
     digitalWrite(PWMA, LOW);   // No power on Right
     digitalWrite(PWMB, LOW);   // No power on Left
     delay(2000);
   } else if (dist == 50){
-    analogWrite(PWMA, 140);   // Full power on Right
-    analogWrite(PWMB, 140);
+    analogWrite(PWMA, 140);   // power on Right
+    analogWrite(PWMB, 140);   // power on left
     delay(910);   
     stopTime(910);
     digitalWrite(PWMA, LOW);   // No power on Right
@@ -93,10 +93,6 @@ void right(){
 void loop() {
   while (digitalRead(modeSwitch) == 1);
   delay(2000);
-  forward(50);
-  forward(50);
-  forward(50);
-  delay(100000);
   forward(25);
   right();
   forward(50);
